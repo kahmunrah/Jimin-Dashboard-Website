@@ -11,6 +11,20 @@ export const EcommerceMetrics = () => {
         <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
           Sarah Watson 29 F
         </h3>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <Badge variant="solid" color="warning">
+            Clinical need: High
+          </Badge>
+          <Badge variant="solid" color="info">
+            Medication change
+          </Badge>
+          <Badge variant="solid" color="info">
+            Certificate
+          </Badge>
+          <Badge variant="solid" color="info">
+            English as second language
+          </Badge>
+        </div>
       </div>
       {/* <!-- Metric Item End --> */}
 
