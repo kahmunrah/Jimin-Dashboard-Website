@@ -9,9 +9,8 @@ import DemographicCard from "@/components/ecommerce/DemographicCard";
 import PatientAvatar from "@/components/ecommerce/PatientAvatar";
 
 export const metadata: Metadata = {
-  title:
-    "Next.js E-commerce Dashboard | TailAdmin - Next.js Dashboard Template",
-  description: "This is Next.js Home for TailAdmin Dashboard Template",
+  title: "Align | Dashboard",
+  description: "Align dashboard home",
 };
 
 export default function Ecommerce() {
