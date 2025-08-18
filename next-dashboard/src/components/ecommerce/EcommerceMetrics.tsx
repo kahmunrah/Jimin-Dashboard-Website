@@ -33,27 +33,8 @@ export const EcommerceMetrics = () => {
         <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
           ICE Model
         </h3>
-        <div className="flex flex-col gap-2 mt-4">
-          <button className="px-4 py-2 text-left text-white rounded-lg bg-purple-800">
-            Idea: I think I&apos;m tired from work and stressed at home, giving me a headache
-          </button>
-          <button className="px-4 py-2 text-left text-white rounded-lg bg-purple-800">
-            Concerns: I&apos;m worried about potential heart problems
-          </button>
-          <button className="px-4 py-2 text-left text-white rounded-lg bg-purple-800">
-            Expectation: I want reassurance and a medical certificate to take time off of work
-          </button>
-        </div>
-      </div>
-      {/* <!-- Metric Item End --> */}
-
-      {/* <!-- Metric Item Start --> */}
-      <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6 sm:col-span-2">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-          ICE Model
-        </h3>
-        <div className="grid grid-cols-2 gap-2 mt-4">
-          <div className="flex flex-col gap-2">
+        <div className="grid grid-cols-[max-content,1fr] gap-2 mt-4">
+          <div className="flex flex-col items-start gap-2">
             <button className="px-4 py-2 text-left rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80">
               Idea
             </button>
