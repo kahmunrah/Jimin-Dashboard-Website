@@ -2,10 +2,17 @@
 import React from "react";
 import Badge from "../ui/badge/Badge";
 import { ArrowDownIcon, ArrowUpIcon, BoxIconLine, GroupIcon } from "@/icons";
+import MonthlyTarget from "./MonthlyTarget";
 
 export const EcommerceMetrics = () => {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
+      {/* <!-- Monthly Target Duplicate Start --> */}
+      <div className="sm:col-span-2">
+        <MonthlyTarget />
+      </div>
+      {/* <!-- Monthly Target Duplicate End --> */}
+
       {/* <!-- Metric Item Start --> */}
       <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6 sm:col-span-2">
         <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
