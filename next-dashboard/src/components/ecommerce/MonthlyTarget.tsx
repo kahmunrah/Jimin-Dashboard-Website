@@ -131,7 +131,7 @@ export default function MonthlyTarget() {
       </div>
 
       <div className="flex items-center justify-center gap-5 px-6 py-3.5 sm:gap-8 sm:py-5">
-        <div>
+        <div className="px-4 py-3 text-center rounded-lg bg-gray-100 dark:bg-white/5">
           <p className="mb-1 text-center text-gray-500 text-theme-xs dark:text-gray-400 sm:text-sm">
             Target
           </p>
@@ -154,9 +154,7 @@ export default function MonthlyTarget() {
           </p>
         </div>
 
-        <div className="w-px bg-gray-200 h-7 dark:bg-gray-800"></div>
-
-        <div>
+        <div className="px-4 py-3 text-center rounded-lg bg-gray-100 dark:bg-white/5">
           <p className="mb-1 text-center text-gray-500 text-theme-xs dark:text-gray-400 sm:text-sm">
             Revenue
           </p>
@@ -179,9 +177,7 @@ export default function MonthlyTarget() {
           </p>
         </div>
 
-        <div className="w-px bg-gray-200 h-7 dark:bg-gray-800"></div>
-
-        <div>
+        <div className="px-4 py-3 text-center rounded-lg bg-gray-100 dark:bg-white/5">
           <p className="mb-1 text-center text-gray-500 text-theme-xs dark:text-gray-400 sm:text-sm">
             Today
           </p>
