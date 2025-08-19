@@ -4,9 +4,12 @@ import { Dropdown } from "../ui/dropdown/Dropdown";
 import { MoreDotIcon } from "@/icons";
 import { useState } from "react";
 import { DropdownItem } from "../ui/dropdown/DropdownItem";
+import Button from "../ui/button/Button";
+import Image from "next/image";
 
 export default function PatientAvatar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [view, setView] = useState<"front" | "back">("front");
 
   function toggleDropdown() {
     setIsOpen(!isOpen);
@@ -50,6 +53,37 @@ export default function PatientAvatar() {
               </DropdownItem>
             </Dropdown>
           </div>
+        </div>
+
+        <div className="mt-4 flex gap-4">
+          <Button
+            size="sm"
+            variant={view === "front" ? "primary" : "outline"}
+            onClick={() => setView("front")}
+          >
+            Front View
+          </Button>
+          <Button
+            size="sm"
+            variant={view === "back" ? "primary" : "outline"}
+            onClick={() => setView("back")}
+          >
+            Back View
+          </Button>
+        </div>
+
+        <div className="mt-6 relative w-full h-[70vh]">
+          <Image
+            src={
+              view === "front"
+                ? "/images/patient-avatar/patient-avatar-front.svg"
+                : "/images/patient-avatar/patient-avatar-front.svg"
+            }
+            alt="Patient avatar"
+            fill
+            className="object-contain"
+            priority
+          />
         </div>
       </div>
     </div>
