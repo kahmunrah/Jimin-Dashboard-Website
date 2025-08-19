@@ -25,31 +25,42 @@ export const EcommerceMetrics = () => {
             English as second language
           </Badge>
         </div>
-        {/* Removed Target, Revenue, Today metrics */}
       </div>
       {/* <!-- Metric Item End --> */}
 
-      {/* <!-- Metric Item Start --> */}
-      <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6 sm:col-span-2">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-          ICE Model
-        </h3>
-        <div className="mt-4 grid grid-cols-[max-content,1fr] gap-2 max-[350px]:grid-cols-1">
-          <div className="px-4 py-2 rounded-lg bg-[#465fff] text-white">Idea</div>
-          <div className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700">
-            I think I&apos;m tired from work and stressed at home, giving me a headache
-          </div>
-          <div className="px-4 py-2 rounded-lg bg-[#465fff] text-white">Concern</div>
-          <div className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700">
-            I&apos;m worried about potential heart problems
-          </div>
-          <div className="px-4 py-2 rounded-lg bg-[#465fff] text-white">Expectation</div>
-          <div className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700">
-            I want reassurance and a medical certificate to take time off of work
-          </div>
-        </div>
-      </div>
-      {/* <!-- Metric Item End --> */}
+{/* <!-- Metric Item Start --> */}
+<div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6 sm:col-span-2">
+  <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
+    ICE Model
+  </h3>
+
+  <dl className="mt-4 grid grid-cols-1 sm:grid-cols-[max-content_1fr] gap-x-3 gap-y-2 items-start">
+    {/* Idea */}
+    <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 whitespace-nowrap">
+      Idea
+    </dt>
+    <dd className="px-4 py-2 rounded-lg bg-[#465fff] text-white break-words">
+      I think I&apos;m tired from work and stressed at home, giving me a headache
+    </dd>
+
+    {/* Concerns */}
+    <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 whitespace-nowrap">
+      Concerns
+    </dt>
+    <dd className="px-4 py-2 rounded-lg bg-[#465fff] text-white break-words">
+      I&apos;m worried about potential heart problems
+    </dd>
+
+    {/* Expectation */}
+    <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 whitespace-nowrap">
+      Expectation
+    </dt>
+    <dd className="px-4 py-2 rounded-lg bg-[#465fff] text-white break-words">
+      I want reassurance and a medical certificate to take time off of work
+    </dd>
+  </dl>
+</div>
+{/* <!-- Metric Item End --> */}
 
       {/* <!-- Metric Item Start --> */}
       <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
