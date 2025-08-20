@@ -11,17 +11,24 @@ export const EcommerceMetrics: React.FC = () => {
       {/* Metric Item Start (with attached grey footer) */}
       <div className="rounded-2xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-white/[0.03] sm:col-span-2">
         {/* White card content */}
-        <div className="px-5 pt-5 bg-white shadow-default rounded-2xl pb-11 dark:bg-gray-900 sm:px-6 sm:pt-6">
-          <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-            Sarah Watson 29 F
-          </h3>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <Badge variant="solid" color="warning">
-              Clinical need: High
-            </Badge>
-            <Badge variant="solid" color="info">Medication change</Badge>
-            <Badge variant="solid" color="info">Certificate</Badge>
-            <Badge variant="solid" color="info">English as second language</Badge>
+        <div className="px-5 pt-5 pb-5 bg-white shadow-default rounded-2xl dark:bg-gray-900 sm:px-6 sm:pt-6 sm:pb-6">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
+                Sarah Watson 29 F
+              </h3>
+              <p className="mt-1 text-gray-500 text-theme-xs dark:text-gray-400">
+                Pre-consultation submitted today at 8:15 AM
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2 justify-end text-right">
+              <Badge variant="solid" color="warning">
+                Clinical need: High
+              </Badge>
+              <Badge variant="solid" color="info">Medication change</Badge>
+              <Badge variant="solid" color="info">Certificate</Badge>
+              <Badge variant="solid" color="info">English as second language</Badge>
+            </div>
           </div>
         </div>
 
