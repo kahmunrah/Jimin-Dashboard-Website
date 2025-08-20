@@ -95,7 +95,7 @@ const AppHeader: React.FC = () => {
               width={154}
               height={32}
               className="hidden dark:block"
-              src="/images/logo/Align-Logo-with-words.svg"
+              src="/images/logo/Align-logo-with-words-dark-mode.svg"
               alt="Logo"
             />
           </Link>
