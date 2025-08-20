@@ -4,6 +4,7 @@ import React from "react";
 import Badge from "../ui/badge/Badge";
 import { ArrowDownIcon, ArrowUpIcon, BoxIconLine, GroupIcon } from "@/icons";
 import Alert from "@/components/ui/alert/Alert";
+import PresentationTabs from "./PresentationTabs";
 
 export const EcommerceMetrics: React.FC = () => {
   return (
@@ -80,6 +81,9 @@ export const EcommerceMetrics: React.FC = () => {
           </dd>
         </dl>
       </div>
+
+      {/* Presentations Card */}
+      <PresentationTabs />
 
       {/* Customers Card */}
       <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
