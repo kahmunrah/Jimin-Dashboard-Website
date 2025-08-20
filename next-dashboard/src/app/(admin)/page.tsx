@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { EcommerceMetrics } from "@/components/ecommerce/EcommerceMetrics";
 import React from "react";
 import PatientAvatar from "@/components/ecommerce/PatientAvatar";
+import PresentationTabs from "@/components/ecommerce/PresentationTabs";
 
 export const metadata: Metadata = {
   title: "Align | Dashboard",
@@ -17,6 +18,10 @@ export default function Ecommerce() {
 
       <div className="col-span-12 space-y-6 xl:col-span-5">
         <PatientAvatar />
+      </div>
+
+      <div className="col-span-12">
+        <PresentationTabs />
       </div>
     </div>
   );
