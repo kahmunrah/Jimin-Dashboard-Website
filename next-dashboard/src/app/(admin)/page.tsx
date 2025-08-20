@@ -6,6 +6,7 @@ import StatisticsChart from "@/components/ecommerce/StatisticsChart";
 import RecentOrders from "@/components/ecommerce/RecentOrders";
 import DemographicCard from "@/components/ecommerce/DemographicCard";
 import PatientAvatar from "@/components/ecommerce/PatientAvatar";
+import CopyDashboardButton from "@/components/ecommerce/CopyDashboardButton";
 
 export const metadata: Metadata = {
   title: "Align | Dashboard",
@@ -14,27 +15,33 @@ export const metadata: Metadata = {
 
 export default function Ecommerce() {
   return (
-    <div className="grid grid-cols-12 gap-4 md:gap-6">
-      <div className="col-span-12 space-y-6 xl:col-span-7">
-        <EcommerceMetrics />
-
-        <MonthlySalesChart />
+    <div>
+      <div className="flex justify-end mb-4">
+        <CopyDashboardButton />
       </div>
 
-      <div className="col-span-12 space-y-6 xl:col-span-5">
-        <PatientAvatar />
-      </div>
+      <div id="dashboard-content" className="grid grid-cols-12 gap-4 md:gap-6">
+        <div className="col-span-12 space-y-6 xl:col-span-7">
+          <EcommerceMetrics />
 
-      <div className="col-span-12">
-        <StatisticsChart />
-      </div>
+          <MonthlySalesChart />
+        </div>
 
-      <div className="col-span-12 xl:col-span-5">
-        <DemographicCard />
-      </div>
+        <div className="col-span-12 space-y-6 xl:col-span-5">
+          <PatientAvatar />
+        </div>
 
-      <div className="col-span-12 xl:col-span-7">
-        <RecentOrders />
+        <div className="col-span-12">
+          <StatisticsChart />
+        </div>
+
+        <div className="col-span-12 xl:col-span-5">
+          <DemographicCard />
+        </div>
+
+        <div className="col-span-12 xl:col-span-7">
+          <RecentOrders />
+        </div>
       </div>
     </div>
   );
