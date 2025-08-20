@@ -2,16 +2,29 @@
 
 import { Dropdown } from "../ui/dropdown/Dropdown";
 import { MoreDotIcon } from "@/icons";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { DropdownItem } from "../ui/dropdown/DropdownItem";
 import Image from "next/image";
 
 export default function PatientAvatar() {
   const [isOpen, setIsOpen] = useState(false);
   const [view, setView] = useState<"front" | "back">("front");
-  const [isExpanded, setIsExpanded] = useState(false);
   const [imageHeight, setImageHeight] = useState("70vh");
   const imageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function updateHeight() {
+      if (imageRef.current) {
+        const top = imageRef.current.getBoundingClientRect().top;
+        const height = window.innerHeight - top - 20; // 20px bottom offset
+        setImageHeight(`${height}px`);
+      }
+    }
+
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
 
   function toggleDropdown(e: React.MouseEvent) {
     e.stopPropagation();
@@ -32,23 +45,9 @@ export default function PatientAvatar() {
       : "text-gray-500 dark:text-gray-400";
   }
 
-  function toggleExpand() {
-    if (imageRef.current && !isExpanded) {
-      const top = imageRef.current.getBoundingClientRect().top;
-      const height = window.innerHeight - top - 20; // 20px bottom offset
-      setImageHeight(`${height}px`);
-    } else {
-      setImageHeight("70vh");
-    }
-    setIsExpanded(!isExpanded);
-  }
-
   return (
     <div className="rounded-2xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-white/[0.03]">
-      <div
-        className="px-5 pt-5 bg-white shadow-default rounded-2xl pb-11 dark:bg-gray-900 sm:px-6 sm:pt-6"
-        onClick={toggleExpand}
-      >
+      <div className="px-5 pt-5 bg-white shadow-default rounded-2xl pb-11 dark:bg-gray-900 sm:px-6 sm:pt-6">
         <div className="flex justify-between">
           <div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
