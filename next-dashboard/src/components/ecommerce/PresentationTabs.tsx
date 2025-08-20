@@ -17,6 +17,11 @@ const PresentationTabs: React.FC = () => {
 
   const copyText = selected === "chest" ? chestPainText : headacheText;
 
+  const getButtonClass = (option: "chest" | "headache") =>
+    selected === option
+      ? "shadow-theme-xs text-gray-900 dark:text-white bg-white dark:bg-gray-800"
+      : "text-gray-500 dark:text-gray-400";
+
   const renderChestPain = () => (
     <div>
       <div className="grid grid-cols-5 gap-4">
@@ -55,39 +60,37 @@ const PresentationTabs: React.FC = () => {
 
   return (
     <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6 sm:col-span-2">
-      <div className="mb-4">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">2 Presentations</h3>
-      </div>
-      <div className="mb-6 flex items-center justify-between gap-2">
-        <div className="flex gap-2">
+      <div className="flex flex-col gap-5 mb-6 sm:flex-row sm:justify-between">
+        <div className="w-full">
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">2 Presentations</h3>
+        </div>
+        <div className="flex items-start w-full gap-3 sm:justify-end">
+          <div className="flex items-center gap-0.5 rounded-lg bg-gray-100 p-0.5 dark:bg-gray-900">
+            <button
+              onClick={() => setSelected("chest")}
+              className={`px-3 py-2 font-medium w-full rounded-md text-theme-sm hover:text-gray-900 dark:hover:text-white ${getButtonClass(
+                "chest"
+              )}`}
+            >
+              Chest Pain
+            </button>
+            <button
+              onClick={() => setSelected("headache")}
+              className={`px-3 py-2 font-medium w-full rounded-md text-theme-sm hover:text-gray-900 dark:hover:text-white ${getButtonClass(
+                "headache"
+              )}`}
+            >
+              Headache
+            </button>
+          </div>
           <button
-            onClick={() => setSelected("chest")}
-            className={`px-4 py-2 rounded-lg text-sm font-medium focus:outline-none ${
-              selected === "chest"
-                ? "bg-[#465fff] text-white"
-                : "bg-gray-100 text-gray-500 dark:bg-white/5 dark:text-gray-400"
-            }`}
+            onClick={() => copyToClipboard(copyText)}
+            className="p-2 text-gray-500 rounded-md hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+            aria-label="Copy presentation details"
           >
-            Chest Pain
-          </button>
-          <button
-            onClick={() => setSelected("headache")}
-            className={`px-4 py-2 rounded-lg text-sm font-medium focus:outline-none ${
-              selected === "headache"
-                ? "bg-[#465fff] text-white"
-                : "bg-gray-100 text-gray-500 dark:bg-white/5 dark:text-gray-400"
-            }`}
-          >
-            Headache
+            <CopyIcon className="size-4" />
           </button>
         </div>
-        <button
-          onClick={() => copyToClipboard(copyText)}
-          className="p-2 text-gray-500 rounded-md hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-          aria-label="Copy presentation details"
-        >
-          <CopyIcon className="size-4" />
-        </button>
       </div>
       {selected === "chest" ? renderChestPain() : renderHeadache()}
     </div>
