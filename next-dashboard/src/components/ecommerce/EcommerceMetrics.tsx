@@ -66,20 +66,21 @@ export const EcommerceMetrics: React.FC = () => {
               </div>
             </div>
           </div>
-          
+          <div className="mt-3">
+            <Alert
+              variant="info"
+              message="This Pre-consult was translated from Korean"
+              size="sm"
+            />
+          </div>
         </div>
         <div className="mt-3">
-          <Alert
-            variant="info"
-            message="This Pre-consult was translated from Korean"
-            size="sm"
-          />
-        {/* Attached grey footer (duplicated style) */}
-        <div className="flex items-center justify-center gap-5 px-6 py-3 sm:gap-8 sm:py-4">
-          <dt className="rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 text-sm line-clamp-3">
-            Patient’s headache began 2 weeks ago, worsening over the duration. Consistent pain with intermittent sharpness. Exacerbates with stress. No nausea or vomiting. Currently takes panadol.
-          </dt>
-        </div>
+          {/* Attached grey footer (duplicated style) */}
+          <div className="flex items-center justify-center gap-5 px-6 py-3 sm:gap-8 sm:py-4">
+            <dt className="rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 text-sm line-clamp-3">
+              Patient’s headache began 2 weeks ago, worsening over the duration. Consistent pain with intermittent sharpness. Exacerbates with stress. No nausea or vomiting. Currently takes panadol.
+            </dt>
+          </div>
         </div>
       </div>
       {/* Metric Item End */}
