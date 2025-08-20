@@ -80,6 +80,24 @@ export default function Alerts() {
             showLink={false}
           />
         </ComponentCard>
+        <ComponentCard title="Skinny Info Alert">
+          <Alert
+            variant="info"
+            title="Info Message"
+            message="Be cautious when performing this action."
+            showLink={true}
+            linkHref="/"
+            linkText="Learn more"
+            size="sm"
+          />
+          <Alert
+            variant="info"
+            title="Info Message"
+            message="Be cautious when performing this action."
+            showLink={false}
+            size="sm"
+          />
+        </ComponentCard>
       </div>
     </div>
   );

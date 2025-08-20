@@ -3,6 +3,7 @@
 import React from "react";
 import Badge from "../ui/badge/Badge";
 import { ArrowDownIcon, ArrowUpIcon, BoxIconLine, GroupIcon } from "@/icons";
+import Alert from "@/components/ui/alert/Alert";
 
 export const EcommerceMetrics: React.FC = () => {
   return (
@@ -43,6 +44,13 @@ export const EcommerceMetrics: React.FC = () => {
         <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
           ICE Model
         </h3>
+        <div className="mt-3">
+          <Alert
+            variant="info"
+            message="This Pre-consult was translated from Korean"
+            size="sm"
+          />
+        </div>
 
         <dl className="mt-4 grid grid-cols-1 sm:grid-cols-[max-content_1fr] gap-x-3 gap-y-2 items-start md:gap-x-4 md:gap-y-3">
           {/* Idea */}
