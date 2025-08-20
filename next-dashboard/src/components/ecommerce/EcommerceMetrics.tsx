@@ -1,68 +1,77 @@
 "use client";
+
 import React from "react";
 import Badge from "../ui/badge/Badge";
 import { ArrowDownIcon, ArrowUpIcon, BoxIconLine, GroupIcon } from "@/icons";
 
-export const EcommerceMetrics = () => {
+export const EcommerceMetrics: React.FC = () => {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
-      {/* <!-- Metric Item Start --> */}
-      <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6 sm:col-span-2">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-          Sarah Watson 29 F
-        </h3>
-        <div className="mt-3 flex flex-wrap gap-2">
-          <Badge variant="solid" color="warning">
-            Clinical need: High
-          </Badge>
-          <Badge variant="solid" color="info">
-            Medication change
-          </Badge>
-          <Badge variant="solid" color="info">
-            Certificate
-          </Badge>
-          <Badge variant="solid" color="info">
-            English as second language
-          </Badge>
+      {/* Metric Item Start (with attached grey footer) */}
+      <div className="rounded-2xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-white/[0.03] sm:col-span-2">
+        {/* White card content */}
+        <div className="px-5 pt-5 bg-white shadow-default rounded-2xl pb-11 dark:bg-gray-900 sm:px-6 sm:pt-6">
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
+            Sarah Watson 29 F
+          </h3>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <Badge variant="solid" color="warning">
+              Clinical need: High
+            </Badge>
+            <Badge variant="solid" color="info">Medication change</Badge>
+            <Badge variant="solid" color="info">Certificate</Badge>
+            <Badge variant="solid" color="info">English as second language</Badge>
+          </div>
+        </div>
+
+        {/* Attached grey footer (duplicated style) */}
+        <div className="flex items-center justify-center gap-5 px-6 py-3.5 sm:gap-8 sm:py-5">
+          <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80">
+          Patient’s headache began 2 weeks ago, worsening over the duration. Consistent pain with intermittent sharpness. Exacerbates with stress. No nausea or vomiting. Currently takes panadol.   
+          </dt>
+
+          
+
+
+          
         </div>
       </div>
-      {/* <!-- Metric Item End --> */}
+      {/* Metric Item End */}
 
-{/* <!-- Metric Item Start --> */}
-<div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6 sm:col-span-2">
-  <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-    ICE Model
-  </h3>
+      {/* ICE Model Card */}
+      <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6 sm:col-span-2">
+        <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
+          ICE Model
+        </h3>
 
-  <dl className="mt-4 grid grid-cols-1 sm:grid-cols-[max-content_1fr] gap-x-3 gap-y-2 items-start">
-    {/* Idea */}
-    <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 whitespace-nowrap">
-      Idea
-    </dt>
-    <dd className="px-4 py-2 rounded-lg bg-[#465fff] text-white break-words">
-      I think I&apos;m tired from work and stressed at home, giving me a headache
-    </dd>
+        <dl className="mt-4 grid grid-cols-1 sm:grid-cols-[max-content_1fr] gap-x-3 gap-y-2 items-start md:gap-x-4 md:gap-y-3">
+          {/* Idea */}
+          <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 whitespace-nowrap">
+            Idea
+          </dt>
+          <dd className="px-4 py-2 rounded-lg bg-[#465fff] text-white break-words min-w-0">
+            I think I&apos;m tired from work and stressed at home, giving me a headache
+          </dd>
 
-    {/* Concerns */}
-    <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 whitespace-nowrap">
-      Concerns
-    </dt>
-    <dd className="px-4 py-2 rounded-lg bg-[#465fff] text-white break-words">
-      I&apos;m worried about potential heart problems
-    </dd>
+          {/* Concerns */}
+          <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 whitespace-nowrap">
+            Concerns
+          </dt>
+          <dd className="px-4 py-2 rounded-lg bg-[#465fff] text-white break-words min-w-0">
+            I&apos;m worried about potential heart problems
+          </dd>
 
-    {/* Expectation */}
-    <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 whitespace-nowrap">
-      Expectation
-    </dt>
-    <dd className="px-4 py-2 rounded-lg bg-[#465fff] text-white break-words">
-      I want reassurance and a medical certificate to take time off of work
-    </dd>
-  </dl>
-</div>
-{/* <!-- Metric Item End --> */}
+          {/* Expectation */}
+          <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 whitespace-nowrap">
+            Expectation
+          </dt>
+          <dd className="px-4 py-2 rounded-lg bg-[#465fff] text-white break-words min-w-0">
+            I want reassurance and a medical certificate to take time off of work
+          </dd>
+        </dl>
+      </div>
 
-      {/* <!-- Metric Item Start --> */}
+      {/* Customers Card */}
       <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
         <div className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-xl dark:bg-gray-800">
           <GroupIcon className="text-gray-800 size-6 dark:text-white/90" />
@@ -83,9 +92,8 @@ export const EcommerceMetrics = () => {
           </Badge>
         </div>
       </div>
-      {/* <!-- Metric Item End --> */}
 
-      {/* <!-- Metric Item Start --> */}
+      {/* Orders Card */}
       <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
         <div className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-xl dark:bg-gray-800">
           <BoxIconLine className="text-gray-800 dark:text-white/90" />
@@ -106,7 +114,6 @@ export const EcommerceMetrics = () => {
           </Badge>
         </div>
       </div>
-      {/* <!-- Metric Item End --> */}
     </div>
   );
 };
