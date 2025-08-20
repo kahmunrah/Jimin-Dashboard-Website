@@ -34,14 +34,9 @@ export const EcommerceMetrics: React.FC = () => {
 
         {/* Attached grey footer (duplicated style) */}
         <div className="flex items-center justify-center gap-5 px-6 py-3.5 sm:gap-8 sm:py-5">
-          <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80">
-          Patient’s headache began 2 weeks ago, worsening over the duration. Consistent pain with intermittent sharpness. Exacerbates with stress. No nausea or vomiting. Currently takes panadol.   
+          <dt className="rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80">
+            Patient’s headache began 2 weeks ago, worsening over the duration. Consistent pain with intermittent sharpness. Exacerbates with stress. No nausea or vomiting. Currently takes panadol.
           </dt>
-
-          
-
-
-          
         </div>
       </div>
       {/* Metric Item End */}
