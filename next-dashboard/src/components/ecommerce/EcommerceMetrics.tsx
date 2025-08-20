@@ -19,7 +19,7 @@ export const EcommerceMetrics: React.FC = () => {
                 Sarah Watson 29 F
               </h3>
               <p className="mt-1 text-gray-500 text-theme-xs dark:text-gray-400">
-                Pre-consultation submitted today at 8:15 AM
+                Submitted today at 8:15 AM
               </p>
             </div>
             <div className="flex flex-wrap gap-2 justify-end text-right">
