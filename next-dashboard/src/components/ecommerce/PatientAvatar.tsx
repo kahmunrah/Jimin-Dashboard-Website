@@ -9,8 +9,24 @@ import Image from "next/image";
 export default function PatientAvatar() {
   const [isOpen, setIsOpen] = useState(false);
   const [view, setView] = useState<"front" | "back">("front");
-  const [imageHeight, setImageHeight] = useState("70vh");
-  const imageRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function updateHeight() {
+      const card = cardRef.current;
+      const iceCard = document.getElementById("ice-model-card");
+      if (card && iceCard) {
+        const cardTop = card.getBoundingClientRect().top;
+        const iceBottom = iceCard.getBoundingClientRect().bottom;
+        const height = iceBottom - cardTop;
+        card.style.height = `${height}px`;
+      }
+    }
+
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
 
   useEffect(() => {
     function updateHeight() {
@@ -47,7 +63,7 @@ export default function PatientAvatar() {
 
   return (
     <div className="rounded-2xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-white/[0.03]">
-      <div className="px-5 pt-5 bg-white shadow-default rounded-2xl pb-11 dark:bg-gray-900 sm:px-6 sm:pt-6">
+      <div className="px-5 pt-5 bg-white shadow-default rounded-2xl pb-11 dark:bg-gray-900 sm:px-6 sm:pt-6 h-full flex flex-col">
         <div className="flex justify-between">
           <div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
@@ -111,11 +127,7 @@ export default function PatientAvatar() {
           </div>
         </div>
 
-        <div
-          ref={imageRef}
-          className="mt-6 relative w-full"
-          style={{ height: imageHeight }}
-        >
+        <div className="mt-6 relative w-full flex-grow">
           <Image
             src={
               view === "front"
