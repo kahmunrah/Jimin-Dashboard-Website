@@ -27,7 +27,7 @@ export const EcommerceMetrics: React.FC = () => {
           <div className="flex items-start justify-between gap-3">
             <div>
               <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-                Sarah Watson 29 F
+                Eunji Lee 33 F
               </h3>
               <p className="mt-1 text-gray-500 text-theme-xs dark:text-gray-400">
                 Submitted today at 8:15 AM
@@ -66,13 +66,20 @@ export const EcommerceMetrics: React.FC = () => {
               </div>
             </div>
           </div>
+          
         </div>
-
+        <div className="mt-3">
+          <Alert
+            variant="info"
+            message="This Pre-consult was translated from Korean"
+            size="sm"
+          />
         {/* Attached grey footer (duplicated style) */}
         <div className="flex items-center justify-center gap-5 px-6 py-3 sm:gap-8 sm:py-4">
           <dt className="rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 text-sm line-clamp-3">
             Patient’s headache began 2 weeks ago, worsening over the duration. Consistent pain with intermittent sharpness. Exacerbates with stress. No nausea or vomiting. Currently takes panadol.
           </dt>
+        </div>
         </div>
       </div>
       {/* Metric Item End */}
@@ -85,13 +92,6 @@ export const EcommerceMetrics: React.FC = () => {
         <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
           ICE Model
         </h3>
-        <div className="mt-3">
-          <Alert
-            variant="info"
-            message="This Pre-consult was translated from Korean"
-            size="sm"
-          />
-        </div>
 
         <dl className="mt-4 grid grid-cols-1 sm:grid-cols-[max-content_1fr] gap-x-3 gap-y-2 items-start md:gap-x-4 md:gap-y-3">
           {/* Idea */}
