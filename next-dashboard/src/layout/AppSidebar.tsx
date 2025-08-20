@@ -319,7 +319,7 @@ const AppSidebar: React.FC = () => {
               />
               <Image
                 className="hidden dark:block"
-                src="/images/logo/Align-Logo-with-words.svg"
+                src="/images/logo/Align-logo-with-words-dark-mode.svg"
                 alt="Logo"
                 width={150}
                 height={40}
