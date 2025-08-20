@@ -15,7 +15,10 @@ const PresentationTabs: React.FC = () => {
     }
   };
 
-  const copyText = selected === "chest" ? chestPainText : headacheText;
+  const copyText =
+    selected === "chest"
+      ? `Chest Pain\n${chestPainText}`
+      : `Headache\n${headacheText}`;
 
   const getButtonClass = (option: "chest" | "headache") =>
     selected === option
@@ -59,7 +62,7 @@ const PresentationTabs: React.FC = () => {
   );
 
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6 sm:col-span-2">
+    <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
       <div className="flex flex-col gap-5 mb-6 sm:flex-row sm:justify-between">
         <div className="w-full">
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">2 Presentations</h3>
@@ -68,7 +71,7 @@ const PresentationTabs: React.FC = () => {
           <div className="flex items-center gap-0.5 rounded-lg bg-gray-100 p-0.5 dark:bg-gray-900">
             <button
               onClick={() => setSelected("chest")}
-              className={`px-3 py-2 font-medium w-full rounded-md text-theme-sm hover:text-gray-900 dark:hover:text-white ${getButtonClass(
+              className={`px-3 py-2 font-medium rounded-md text-theme-sm whitespace-nowrap hover:text-gray-900 dark:hover:text-white ${getButtonClass(
                 "chest"
               )}`}
             >
@@ -76,7 +79,7 @@ const PresentationTabs: React.FC = () => {
             </button>
             <button
               onClick={() => setSelected("headache")}
-              className={`px-3 py-2 font-medium w-full rounded-md text-theme-sm hover:text-gray-900 dark:hover:text-white ${getButtonClass(
+              className={`px-3 py-2 font-medium rounded-md text-theme-sm whitespace-nowrap hover:text-gray-900 dark:hover:text-white ${getButtonClass(
                 "headache"
               )}`}
             >

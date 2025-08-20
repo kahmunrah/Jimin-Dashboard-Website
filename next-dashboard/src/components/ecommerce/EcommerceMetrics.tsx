@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Badge from "../ui/badge/Badge";
 import { MoreDotIcon } from "@/icons";
 import Alert from "@/components/ui/alert/Alert";
-import PresentationTabs from "./PresentationTabs";
 import { Dropdown } from "../ui/dropdown/Dropdown";
 import { DropdownItem } from "../ui/dropdown/DropdownItem";
 
@@ -117,10 +116,6 @@ export const EcommerceMetrics: React.FC = () => {
           </dd>
         </dl>
       </div>
-
-      {/* Presentations Card */}
-      <PresentationTabs />
-
     </div>
   );
 };
