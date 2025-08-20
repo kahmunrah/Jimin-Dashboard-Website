@@ -2,16 +2,19 @@
 
 import { Dropdown } from "../ui/dropdown/Dropdown";
 import { MoreDotIcon } from "@/icons";
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import { DropdownItem } from "../ui/dropdown/DropdownItem";
-import Button from "../ui/button/Button";
 import Image from "next/image";
 
 export default function PatientAvatar() {
   const [isOpen, setIsOpen] = useState(false);
   const [view, setView] = useState<"front" | "back">("front");
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [imageHeight, setImageHeight] = useState("70vh");
+  const imageRef = useRef<HTMLDivElement>(null);
 
-  function toggleDropdown() {
+  function toggleDropdown(e: React.MouseEvent) {
+    e.stopPropagation();
     setIsOpen(!isOpen);
   }
 
@@ -19,60 +22,101 @@ export default function PatientAvatar() {
     setIsOpen(false);
   }
 
+  function toggleView(option: "front" | "back") {
+    setView(option);
+  }
+
+  function getButtonClass(option: "front" | "back") {
+    return view === option
+      ? "shadow-theme-xs text-gray-900 dark:text-white bg-white dark:bg-gray-800"
+      : "text-gray-500 dark:text-gray-400";
+  }
+
+  function toggleExpand() {
+    if (imageRef.current && !isExpanded) {
+      const top = imageRef.current.getBoundingClientRect().top;
+      const height = window.innerHeight - top - 20; // 20px bottom offset
+      setImageHeight(`${height}px`);
+    } else {
+      setImageHeight("70vh");
+    }
+    setIsExpanded(!isExpanded);
+  }
+
   return (
     <div className="rounded-2xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-white/[0.03]">
-      <div className="px-5 pt-5 bg-white shadow-default rounded-2xl pb-11 dark:bg-gray-900 sm:px-6 sm:pt-6">
+      <div
+        className="px-5 pt-5 bg-white shadow-default rounded-2xl pb-11 dark:bg-gray-900 sm:px-6 sm:pt-6"
+        onClick={toggleExpand}
+      >
         <div className="flex justify-between">
           <div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
               Patient Avatar
             </h3>
           </div>
-          <div className="relative inline-block">
-            <button onClick={toggleDropdown} className="dropdown-toggle">
-              <MoreDotIcon className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300" />
-            </button>
-            <Dropdown
-              isOpen={isOpen}
-              onClose={closeDropdown}
-              className="w-40 p-2"
+          <div className="flex items-start gap-3">
+            <div
+              className="flex items-center gap-0.5 rounded-lg bg-gray-100 p-0.5 dark:bg-gray-900"
+              onClick={(e) => e.stopPropagation()}
             >
-              <DropdownItem
-                tag="a"
-                onItemClick={closeDropdown}
-                className="flex w-full font-normal text-left text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleView("front");
+                }}
+                className={`px-3 py-2 font-medium w-full rounded-md text-theme-sm hover:text-gray-900 dark:hover:text-white ${getButtonClass(
+                  "front"
+                )}`}
               >
-                View More
-              </DropdownItem>
-              <DropdownItem
-                tag="a"
-                onItemClick={closeDropdown}
-                className="flex w-full font-normal text-left text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
+                Front
+              </button>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleView("back");
+                }}
+                className={`px-3 py-2 font-medium w-full rounded-md text-theme-sm hover:text-gray-900 dark:hover:text-white ${getButtonClass(
+                  "back"
+                )}`}
               >
-                Delete
-              </DropdownItem>
-            </Dropdown>
+                Back
+              </button>
+            </div>
+            <div className="relative inline-block" onClick={(e) => e.stopPropagation()}>
+              <button onClick={toggleDropdown} className="dropdown-toggle">
+                <MoreDotIcon className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300" />
+              </button>
+              <Dropdown
+                isOpen={isOpen}
+                onClose={closeDropdown}
+                className="w-40 p-2"
+              >
+                <DropdownItem
+                  tag="a"
+                  onItemClick={closeDropdown}
+                  className="flex w-full font-normal text-left text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
+                >
+                  View More
+                </DropdownItem>
+                <DropdownItem
+                  tag="a"
+                  onItemClick={closeDropdown}
+                  className="flex w-full font-normal text-left text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
+                >
+                  Delete
+                </DropdownItem>
+              </Dropdown>
+            </div>
           </div>
         </div>
 
-        <div className="mt-4 flex gap-4">
-          <Button
-            size="sm"
-            variant={view === "front" ? "primary" : "outline"}
-            onClick={() => setView("front")}
-          >
-            Front View
-          </Button>
-          <Button
-            size="sm"
-            variant={view === "back" ? "primary" : "outline"}
-            onClick={() => setView("back")}
-          >
-            Back View
-          </Button>
-        </div>
-
-        <div className="mt-6 relative w-full h-[70vh]">
+        <div
+          ref={imageRef}
+          className="mt-6 relative w-full"
+          style={{ height: imageHeight }}
+        >
           <Image
             src={
               view === "front"
