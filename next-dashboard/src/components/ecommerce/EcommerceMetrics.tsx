@@ -1,12 +1,30 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Badge from "../ui/badge/Badge";
-import { ArrowDownIcon, ArrowUpIcon, BoxIconLine, GroupIcon } from "@/icons";
+import {
+  ArrowDownIcon,
+  ArrowUpIcon,
+  BoxIconLine,
+  GroupIcon,
+  MoreDotIcon,
+} from "@/icons";
 import Alert from "@/components/ui/alert/Alert";
 import PresentationTabs from "./PresentationTabs";
+import { Dropdown } from "../ui/dropdown/Dropdown";
+import { DropdownItem } from "../ui/dropdown/DropdownItem";
 
 export const EcommerceMetrics: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  function toggleMenu() {
+    setIsMenuOpen(!isMenuOpen);
+  }
+
+  function closeMenu() {
+    setIsMenuOpen(false);
+  }
+
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
       {/* Metric Item Start (with attached grey footer) */}
@@ -22,13 +40,37 @@ export const EcommerceMetrics: React.FC = () => {
                 Submitted today at 8:15 AM
               </p>
             </div>
-            <div className="flex flex-wrap gap-2 justify-end text-right">
-              <Badge variant="solid" color="warning">
-                Clinical need: High
-              </Badge>
-              <Badge variant="solid" color="info">Medication change</Badge>
-              <Badge variant="solid" color="info">Certificate</Badge>
-              <Badge variant="solid" color="info">English as second language</Badge>
+            <div className="flex flex-col items-end gap-2">
+              <div className="relative inline-block">
+                <button
+                  onClick={toggleMenu}
+                  className="dropdown-toggle text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                >
+                  <MoreDotIcon />
+                </button>
+                <Dropdown isOpen={isMenuOpen} onClose={closeMenu} className="w-40 p-2">
+                  <DropdownItem
+                    onItemClick={closeMenu}
+                    className="flex w-full font-normal text-left text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
+                  >
+                    Export as PDF
+                  </DropdownItem>
+                  <DropdownItem
+                    onItemClick={closeMenu}
+                    className="flex w-full font-normal text-left text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
+                  >
+                    Copy All
+                  </DropdownItem>
+                </Dropdown>
+              </div>
+              <div className="flex flex-wrap gap-2 justify-end text-right">
+                <Badge variant="solid" color="warning">
+                  Clinical need: High
+                </Badge>
+                <Badge variant="solid" color="info">Medication change</Badge>
+                <Badge variant="solid" color="info">Certificate</Badge>
+                <Badge variant="solid" color="info">English as second language</Badge>
+              </div>
             </div>
           </div>
         </div>
