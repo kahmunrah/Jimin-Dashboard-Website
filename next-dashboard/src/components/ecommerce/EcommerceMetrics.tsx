@@ -99,7 +99,7 @@ export const EcommerceMetrics: React.FC = () => {
           <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 whitespace-nowrap">
             Idea
           </dt>
-          <dd className="px-4 py-2 rounded-lg bg-[#EDF3FE] text-[#4B5FF7] break-words min-w-0">
+          <dd className="px-4 py-2 rounded-lg bg-brand-50 text-brand-500 break-words min-w-0 dark:bg-brand-500/[0.12] dark:text-brand-400">
             I think I&apos;m tired from work and stressed at home, giving me a headache
           </dd>
 
@@ -107,7 +107,7 @@ export const EcommerceMetrics: React.FC = () => {
           <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 whitespace-nowrap">
             Concerns
           </dt>
-          <dd className="px-4 py-2 rounded-lg bg-[#EDF3FE] text-[#4B5FF7] break-words min-w-0">
+          <dd className="px-4 py-2 rounded-lg bg-brand-50 text-brand-500 break-words min-w-0 dark:bg-brand-500/[0.12] dark:text-brand-400">
             I&apos;m worried about potential heart problems
           </dd>
 
@@ -115,7 +115,7 @@ export const EcommerceMetrics: React.FC = () => {
           <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 whitespace-nowrap">
             Expectation
           </dt>
-          <dd className="px-4 py-2 rounded-lg bg-[#EDF3FE] text-[#4B5FF7] break-words min-w-0">
+          <dd className="px-4 py-2 rounded-lg bg-brand-50 text-brand-500 break-words min-w-0 dark:bg-brand-500/[0.12] dark:text-brand-400">
             I want reassurance and a medical certificate to take time off of work
           </dd>
         </dl>
