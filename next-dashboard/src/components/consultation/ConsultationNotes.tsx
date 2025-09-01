@@ -65,9 +65,16 @@ const ConsultationNotes: React.FC<ConsultationNotesProps> = ({ initialContent })
       )}
 
       {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="flex h-full w-full max-w-md flex-col rounded-2xl bg-white shadow-lg dark:bg-gray-900 sm:h-80 sm:w-96">
-            <div className="flex items-center justify-between rounded-t-2xl bg-gray-100 p-3 dark:bg-gray-800">
+        <div className="fixed inset-0 z-[100000] flex items-center justify-center bg-black/50 p-4 sm:p-8">
+          <div className="relative flex h-full w-full flex-col rounded-2xl bg-white shadow-lg dark:bg-gray-900">
+            <button
+              onClick={() => setOpen(false)}
+              aria-label="Close consultation notes"
+              className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
+            >
+              <CloseIcon className="h-6 w-6" />
+            </button>
+            <div className="flex items-center justify-between rounded-t-2xl bg-gray-100 p-4 pr-12 dark:bg-gray-800">
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-gray-800 dark:text-white">Eunji&apos;s Consultation Notes</span>
                 <span className="text-sm text-gray-500 dark:text-gray-400">{formatTime(elapsed)}</span>
@@ -84,12 +91,6 @@ const ConsultationNotes: React.FC<ConsultationNotesProps> = ({ initialContent })
                   className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                 >
                   <CopyIcon className="h-5 w-5" />
-                </button>
-                <button
-                  onClick={() => setOpen(false)}
-                  className="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
-                >
-                  <CloseIcon className="h-5 w-5" />
                 </button>
               </div>
             </div>
