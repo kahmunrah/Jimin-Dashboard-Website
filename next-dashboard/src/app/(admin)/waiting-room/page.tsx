@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PatientCard from "@/components/waiting-room/PatientCard";
+import PatientCard, { Tag } from "@/components/waiting-room/PatientCard";
 import React from "react";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ interface ScheduleItem {
     age: number;
     gender: string;
     submittedAt: string;
-    tags: string[];
+    tags: Tag[];
     conditions: string[];
   };
   duration?: number;
@@ -92,12 +92,13 @@ export default function WaitingRoom() {
           gender="F"
           submittedAt="8:15 AM"
           tags={[
+            { label: "NHIUAU2990", variant: "light", color: "success" },
             "Clinical need: High",
             "Medication change",
             "Certificate",
             "English as second language",
           ]}
-          conditions={["Chest Pain", "Headache"]}
+          conditions={["Chest Pain", "Migraine"]}
           link="/"
         />
       </section>
