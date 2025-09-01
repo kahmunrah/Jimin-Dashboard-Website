@@ -37,6 +37,11 @@ const navItems: NavItem[] = [
     path: "/calendar",
   },
   {
+    icon: <HorizontaLDots />,
+    name: "Waiting Room",
+    path: "/waiting-room",
+  },
+  {
     icon: <UserCircleIcon />,
     name: "User Profile",
     path: "/profile",
