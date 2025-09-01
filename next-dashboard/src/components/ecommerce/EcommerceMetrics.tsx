@@ -6,6 +6,7 @@ import { MoreDotIcon } from "@/icons";
 import Alert from "@/components/ui/alert/Alert";
 import { Dropdown } from "../ui/dropdown/Dropdown";
 import { DropdownItem } from "../ui/dropdown/DropdownItem";
+import ConsultationNotes from "@/components/consultation/ConsultationNotes";
 
 export const EcommerceMetrics: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,6 +18,15 @@ export const EcommerceMetrics: React.FC = () => {
   function closeMenu() {
     setIsMenuOpen(false);
   }
+
+  const initialNotes = `Eunji Lee 33 F
+Tags: Clinical need: High, Medication change, Certificate, English as second language
+
+Idea: I think I'm tired from work and stressed at home, giving me a headache
+Concerns: I'm worried about potential heart problems
+Expectation: I want reassurance and a medical certificate to take time off of work
+
+Patient’s headache began 2 weeks ago, worsening over the duration. Consistent pain with intermittent sharpness. Exacerbates with stress. No nausea or vomiting. Currently takes panadol.`;
 
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
@@ -120,6 +130,7 @@ export const EcommerceMetrics: React.FC = () => {
           </dd>
         </dl>
       </div>
+      <ConsultationNotes initialContent={initialNotes} />
     </div>
   );
 };
