@@ -12,27 +12,27 @@ const Presentations: React.FC = () => {
         <div className="mt-6">
           <div className="grid grid-cols-5 gap-4">
             <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03]">
-              <span className="text-base text-gray-800 dark:text-white/90">Severity</span>
-              <h4 className="mt-2 font-bold text-gray-800 text-title-sm dark:text-white/90">6/10</h4>
+              <span className="text-gray-500 dark:text-gray-400">Severity</span>
+              <p className="mt-2 font-medium text-gray-800 dark:text-white/90">6/10</p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03]">
-              <span className="text-base text-gray-800 dark:text-white/90">Onset</span>
-              <h4 className="mt-2 font-bold text-gray-800 text-title-sm dark:text-white/90">Uncertain</h4>
-              <p className="mt-2 text-gray-500 text-theme-xs dark:text-gray-400">
+              <span className="text-gray-500 dark:text-gray-400">Onset</span>
+              <p className="mt-2 font-medium text-gray-800 dark:text-white/90">Uncertain</p>
+              <p className="mt-2 text-gray-500 dark:text-gray-400">
                 Experienced for more than a few months, uncertain for how long.
               </p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03]">
-              <span className="text-base text-gray-800 dark:text-white/90">Character</span>
-              <h4 className="mt-2 font-bold text-gray-800 text-title-sm dark:text-white/90">Stinging pain</h4>
+              <span className="text-gray-500 dark:text-gray-400">Character</span>
+              <p className="mt-2 font-medium text-gray-800 dark:text-white/90">Stinging pain</p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03]">
-              <span className="text-base text-gray-800 dark:text-white/90">Related Symptoms</span>
-              <h4 className="mt-2 font-bold text-gray-800 text-title-sm dark:text-white/90">0 Indicated</h4>
+              <span className="text-gray-500 dark:text-gray-400">Related Symptoms</span>
+              <p className="mt-2 font-medium text-gray-800 dark:text-white/90">0 Indicated</p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03]">
-              <span className="text-base text-gray-800 dark:text-white/90">Current Management</span>
-              <p className="mt-2 text-gray-500 text-theme-xs dark:text-gray-400">No steps taken</p>
+              <span className="text-gray-500 dark:text-gray-400">Current Management</span>
+              <p className="mt-2 font-medium text-gray-800 dark:text-white/90">No steps taken</p>
             </div>
           </div>
         </div>
