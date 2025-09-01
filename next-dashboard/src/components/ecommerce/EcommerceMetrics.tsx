@@ -7,10 +7,34 @@ import Alert from "@/components/ui/alert/Alert";
 import { Dropdown } from "../ui/dropdown/Dropdown";
 import { DropdownItem } from "../ui/dropdown/DropdownItem";
 import ConsultationNotes from "@/components/consultation/ConsultationNotes";
-import { chestPainText, migraineText } from "@/data/presentations";
+import { patient } from "@/data/patient";
+
+const getAge = (dob: string) => {
+  const diff = Date.now() - new Date(dob).getTime();
+  const ageDt = new Date(diff);
+  return Math.abs(ageDt.getUTCFullYear() - 1970);
+};
 
 export const EcommerceMetrics: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const age = getAge(patient.date_of_birth);
+  const notesFromPresentations = patient.presenting_symptoms
+    .map((sym) => `${sym.label}\n${sym.notes}`)
+    .join("\n\n");
+  const tagsText = [
+    `NHI: ${patient.nhi_number}`,
+    `Clinical need: ${patient.clinical_need}`,
+    ...patient.tags,
+    "English as second language",
+  ].join(", ");
+  const initialNotes =
+    `${patient.first_name} ${patient.last_name} ${age} ${patient.gender}\n` +
+    `Tags: ${tagsText}\n\n` +
+    `${patient.chief_complaint}\n\n` +
+    `Idea: ${patient.ice.idea}\n` +
+    `Concerns: ${patient.ice.concern}\n` +
+    `Expectation: ${patient.ice.expectation}\n\n` +
+    `${notesFromPresentations}`;
 
   function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);
@@ -19,21 +43,6 @@ export const EcommerceMetrics: React.FC = () => {
   function closeMenu() {
     setIsMenuOpen(false);
   }
-
-  const initialNotes = `Eunji Lee 33 F
-Tags: NHI: NHIUAU2990, Clinical need: High, Medication change, Certificate, English as second language
-
-Patient’s migraine began 2 weeks ago, worsening over the duration. Consistent pain with intermittent sharpness. Exacerbates with stress. No nausea or vomiting. Currently takes panadol.
-
-Idea: I think I'm tired from work and stressed at home, giving me a migraine
-Concerns: I'm worried about potential heart problems
-Expectation: I want reassurance and a medical certificate to take time off of work
-
-Chest Pain
-${chestPainText}
-
-Migraine
-${migraineText}`;
 
   return (
     <div className="space-y-4 md:space-y-6">
@@ -44,10 +53,10 @@ ${migraineText}`;
           <div className="flex items-start justify-between gap-3">
             <div>
               <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-                Eunji Lee 33 F
+                {patient.first_name} {patient.last_name} {age} {patient.gender}
               </h3>
               <p className="mt-1 text-gray-500 text-theme-xs dark:text-gray-400">
-                Submitted today at 8:15 AM
+                {patient.ended_at}
               </p>
             </div>
             <div className="flex flex-col items-end gap-2">
@@ -74,27 +83,50 @@ ${migraineText}`;
                 </Dropdown>
               </div>
               <div className="flex flex-wrap gap-2 justify-end text-right">
-                <Badge variant="light" color="success">NHIUAU2990</Badge>
-                <Badge variant="solid" color="warning">Clinical need: High</Badge>
-                <Badge variant="solid" color="info">Medication change</Badge>
-                <Badge variant="solid" color="info">Certificate</Badge>
-                <Badge variant="solid" color="info">English as second language</Badge>
+                {[
+                  { label: patient.nhi_number, variant: "light", color: "success" as const },
+                  {
+                    label: `Clinical need: ${patient.clinical_need}`,
+                    variant: "solid",
+                    color: "warning" as const,
+                  },
+                  ...patient.tags.map((tag) => ({
+                    label: tag,
+                    variant: "solid",
+                    color: "info" as const,
+                  })),
+                  {
+                    label: `ESL: ${patient.preferred_language} preferred`,
+                    variant: "solid",
+                    color: "info" as const,
+                  },
+                ].map((badge) => (
+                  <Badge
+                    key={badge.label}
+                    variant={badge.variant}
+                    color={badge.color}
+                  >
+                    {badge.label}
+                  </Badge>
+                ))}
               </div>
             </div>
           </div>
-          <div className="mt-3">
-            <Alert
-              variant="info"
-              message="This Pre-consult was translated from Korean"
-              size="sm"
-            />
-          </div>
+          {patient.translated_from && (
+            <div className="mt-3">
+              <Alert
+                variant="info"
+                message={`This Pre-consult was translated from ${patient.translated_from}`}
+                size="sm"
+              />
+            </div>
+          )}
         </div>
         <div className="mt-3">
           {/* Attached grey footer (duplicated style) */}
           <div className="flex items-center justify-center gap-5 px-6 py-3 sm:gap-8 sm:py-4">
             <dt className="rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 text-sm line-clamp-3">
-              Patient’s migraine began 2 weeks ago, worsening over the duration. Consistent pain with intermittent sharpness. Exacerbates with stress. No nausea or vomiting. Currently takes panadol.
+              {patient.chief_complaint}
             </dt>
           </div>
         </div>
