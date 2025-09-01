@@ -2,12 +2,10 @@
 
 import React, { useState } from "react";
 import { CopyIcon } from "@/icons";
+import { chestPainText, headacheText } from "@/data/presentations";
 
 const PresentationTabs: React.FC = () => {
   const [selected, setSelected] = useState<"chest" | "headache">("chest");
-
-  const chestPainText = `Severity: 6/10\nOnset: Uncertain\nExperienced for more than a few months, uncertain for how long.\nCharacter: Stinging pain\nRelated Symptoms: 0 Indicated\nCurrent Management: No steps taken`;
-  const headacheText = "No details available.";
 
   const copyToClipboard = (text: string) => {
     if (navigator?.clipboard) {
@@ -57,7 +55,7 @@ const PresentationTabs: React.FC = () => {
 
   const renderHeadache = () => (
     <div>
-      <p className="text-gray-500 dark:text-gray-400">No details available.</p>
+      <p className="text-gray-500 dark:text-gray-400">{headacheText}</p>
     </div>
   );
 
