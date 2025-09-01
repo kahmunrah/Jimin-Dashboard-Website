@@ -35,6 +35,17 @@ const ConsultationNotes: React.FC<ConsultationNotesProps> = ({ initialContent })
 
   useEffect(() => {
     if (!open) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
     setSaved(false);
     const handle = setTimeout(() => setSaved(true), 500);
     return () => clearTimeout(handle);
@@ -70,9 +81,9 @@ const ConsultationNotes: React.FC<ConsultationNotesProps> = ({ initialContent })
             <button
               onClick={() => setOpen(false)}
               aria-label="Close consultation notes"
-              className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
+              className="absolute top-4 right-4 rounded-full bg-red-500 p-2 text-white hover:bg-red-600"
             >
-              <CloseIcon className="h-6 w-6" />
+              <CloseIcon className="h-4 w-4" />
             </button>
             <div className="flex items-center justify-between rounded-t-2xl bg-gray-100 p-4 pr-12 dark:bg-gray-800">
               <div className="flex items-center gap-2">
