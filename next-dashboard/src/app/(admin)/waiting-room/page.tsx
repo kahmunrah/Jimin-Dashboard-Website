@@ -35,7 +35,7 @@ const schedule: ScheduleItem[] = [
   {
     time: "9:15 AM",
     patient: {
-      name: "Lucas Kim",
+      name: "Mateo Garcia",
       age: 45,
       gender: "M",
       submittedAt: "8:50 AM",
@@ -46,7 +46,7 @@ const schedule: ScheduleItem[] = [
   {
     time: "9:30 AM",
     patient: {
-      name: "Hannah Lee",
+      name: "Aisha Patel",
       age: 30,
       gender: "F",
       submittedAt: "9:10 AM",
@@ -58,7 +58,7 @@ const schedule: ScheduleItem[] = [
   {
     time: "10:00 AM",
     patient: {
-      name: "Noah Choi",
+      name: "Noah Okafor",
       age: 35,
       gender: "M",
       submittedAt: "9:20 AM",
@@ -69,7 +69,7 @@ const schedule: ScheduleItem[] = [
   {
     time: "10:15 AM",
     patient: {
-      name: "Soojin Park",
+      name: "Fatima Al-Sayed",
       age: 25,
       gender: "F",
       submittedAt: "9:50 AM",
@@ -87,7 +87,7 @@ export default function WaitingRoom() {
           Next Patient
         </h2>
         <PatientCard
-          name="Eunji Lee"
+          name="Amara Johnson"
           age={33}
           gender="F"
           submittedAt="8:15 AM"

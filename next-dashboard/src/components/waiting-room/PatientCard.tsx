@@ -58,7 +58,7 @@ const PatientCard: React.FC<PatientCardProps> = ({
           {link && (
             <Link
               href={link}
-              className="text-sm text-brand-500 underline self-end"
+              className="self-end inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-brand-500 rounded-lg shadow-theme-xs hover:bg-brand-600"
             >
               view pre-consult
             </Link>
