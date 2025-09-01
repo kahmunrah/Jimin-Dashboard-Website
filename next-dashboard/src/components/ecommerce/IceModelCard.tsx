@@ -1,4 +1,5 @@
 import React from "react";
+import { patient } from "@/data/patient";
 
 const IceModelCard: React.FC = () => {
   return (
@@ -9,21 +10,21 @@ const IceModelCard: React.FC = () => {
           Idea
         </dt>
         <dd className="px-4 py-2 rounded-lg bg-brand-50 text-brand-500 break-words min-w-0 dark:bg-brand-500/[0.12] dark:text-brand-400">
-          I think I&apos;m tired from work and stressed at home, giving me a migraine
+          {patient.ice.idea}
         </dd>
 
         <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 whitespace-nowrap">
           Concerns
         </dt>
         <dd className="px-4 py-2 rounded-lg bg-brand-50 text-brand-500 break-words min-w-0 dark:bg-brand-500/[0.12] dark:text-brand-400">
-          I&apos;m worried about potential heart problems
+          {patient.ice.concern}
         </dd>
 
         <dt className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 whitespace-nowrap">
           Expectation
         </dt>
         <dd className="px-4 py-2 rounded-lg bg-brand-50 text-brand-500 break-words min-w-0 dark:bg-brand-500/[0.12] dark:text-brand-400">
-          I want reassurance and a medical certificate to take time off of work
+          {patient.ice.expectation}
         </dd>
       </dl>
     </div>
