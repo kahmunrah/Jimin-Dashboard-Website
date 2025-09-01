@@ -81,7 +81,7 @@ const ConsultationNotes: React.FC<ConsultationNotesProps> = ({ initialContent })
             <button
               onClick={() => setOpen(false)}
               aria-label="Close consultation notes"
-              className="absolute top-4 right-4 rounded-full bg-red-500 p-2 text-white hover:bg-red-600"
+              className="absolute top-4 right-4 p-2 text-red-500 hover:text-red-600"
             >
               <CloseIcon className="h-4 w-4" />
             </button>
