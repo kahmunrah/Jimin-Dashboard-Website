@@ -1,13 +1,17 @@
 import React from "react";
-import Badge from "@/components/ui/badge/Badge";
+import Badge, { BadgeColor, BadgeVariant } from "@/components/ui/badge/Badge";
 import Link from "next/link";
+
+export type Tag =
+  | string
+  | { label: string; color?: BadgeColor; variant?: BadgeVariant };
 
 export interface PatientCardProps {
   name: string;
   age: number;
   gender: string;
   submittedAt: string;
-  tags: string[];
+  tags: Tag[];
   conditions: string[];
   link?: string;
 }
@@ -35,11 +39,21 @@ const PatientCard: React.FC<PatientCardProps> = ({
           </div>
           <div className="flex flex-col items-end gap-2">
             <div className="flex flex-wrap gap-2 justify-end text-right">
-              {tags.map((tag) => (
-                <Badge key={tag} variant="solid" color="info">
-                  {tag}
-                </Badge>
-              ))}
+              {tags.map((tag) =>
+                typeof tag === "string" ? (
+                  <Badge key={tag} variant="solid" color="info">
+                    {tag}
+                  </Badge>
+                ) : (
+                  <Badge
+                    key={tag.label}
+                    variant={tag.variant ?? "solid"}
+                    color={tag.color ?? "info"}
+                  >
+                    {tag.label}
+                  </Badge>
+                )
+              )}
             </div>
           </div>
         </div>

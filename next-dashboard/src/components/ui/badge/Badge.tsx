@@ -1,8 +1,8 @@
 import React from "react";
 
-type BadgeVariant = "light" | "solid";
+export type BadgeVariant = "light" | "solid";
 type BadgeSize = "sm" | "md";
-type BadgeColor =
+export type BadgeColor =
   | "primary"
   | "success"
   | "error"
