@@ -16,7 +16,7 @@ export default function Ecommerce() {
         <EcommerceMetrics />
       </div>
 
-      <div className="col-span-12 space-y-6 lg:col-span-6">
+      <div className="col-span-12 lg:col-span-6 flex">
         <IceModelCard />
       </div>
 
