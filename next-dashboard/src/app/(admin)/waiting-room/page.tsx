@@ -87,7 +87,7 @@ export default function WaitingRoom() {
           Next Patient
         </h2>
         <PatientCard
-          name="Amara Johnson"
+          name="Eunji Lee"
           age={33}
           gender="F"
           submittedAt="8:15 AM"
