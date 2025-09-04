@@ -9,7 +9,7 @@ const VectorMap = dynamic(
 );
 
 // Define the component props
-interface CountryMapProps {
+interface PatientLocationsMapProps {
   mapColor?: string;
 }
 
@@ -32,7 +32,7 @@ type Marker = {
   };
 };
 
-const CountryMap: React.FC<CountryMapProps> = ({ mapColor }) => {
+const PatientLocationsMap: React.FC<PatientLocationsMapProps> = ({ mapColor }) => {
   return (
     <VectorMap
       map={worldMill}
@@ -120,4 +120,4 @@ const CountryMap: React.FC<CountryMapProps> = ({ mapColor }) => {
   );
 };
 
-export default CountryMap;
+export default PatientLocationsMap;

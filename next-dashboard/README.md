@@ -1,6 +1,6 @@
-# TailAdmin Next.js - Free Next.js Tailwind Admin Dashboard Template
+# Align Medical Dashboard - Next.js Tailwind Admin Dashboard Template
 
-TailAdmin is a free and open-source admin dashboard template built on **Next.js and Tailwind CSS** providing developers with everything they need to create a feature-rich and data-driven: back-end, dashboard, or admin panel solution for any sort of web project.
+This project adapts the TailAdmin template into a medical dashboard built on **Next.js and Tailwind CSS**. It provides a foundation for clinic or patient management interfaces with reusable UI components and layouts.
 
 ![TailAdmin - Next.js Dashboard Preview](./banner.png)
 
@@ -88,7 +88,7 @@ All components are built with React and styled using Tailwind CSS for easy custo
 - Community support
 
 ### Pro Version
-- 5 Unique Dashboards: Analytics, Ecommerce, Marketing, CRM, Stocks (more coming soon)
+- 5 Unique Dashboards: Analytics, Medical, Marketing, CRM, Stocks (more coming soon)
 - 400+ dashboard components and UI elements
 - Complete Figma design file
 - Email support

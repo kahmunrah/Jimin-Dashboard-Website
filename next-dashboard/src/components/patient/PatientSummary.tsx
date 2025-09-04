@@ -15,7 +15,7 @@ const getAge = (dob: string) => {
   return Math.abs(ageDt.getUTCFullYear() - 1970);
 };
 
-export const EcommerceMetrics: React.FC = () => {
+export const PatientSummary: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const age = getAge(patient.date_of_birth);
   const notesFromPresentations = patient.presenting_symptoms
