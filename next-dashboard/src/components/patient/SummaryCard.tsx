@@ -19,13 +19,20 @@ const SummaryCard: React.FC = () => {
       <style jsx>{`
         .summary-card {
           position: relative;
-          background-image: linear-gradient(
-            315deg,
-            hsl(213deg 95% 91%) 0%,
-            hsl(248deg 100% 86%) 47%,
-            hsl(293deg 78% 89%) 100%
+          background-image: radial-gradient(
+            circle at 25% 25%,
+            #c5bbfa 0%,
+            #b3ddff 50%,
+            #f9c9e3 100%
           );
-          box-shadow: 0 2px 3px 1px hsl(222deg 50% 20% / 50%);
+        }
+        .dark .summary-card {
+          background-image: radial-gradient(
+            circle at 25% 25%,
+            #342b6b 0%,
+            #1e3a5f 50%,
+            #5b2446 100%
+          );
         }
         .shimmer {
           position: absolute;
