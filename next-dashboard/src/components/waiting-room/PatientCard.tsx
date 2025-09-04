@@ -26,7 +26,7 @@ const PatientCard: React.FC<PatientCardProps> = ({
   link,
 }) => {
   return (
-    <div className="rounded-2xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-white/[0.03]">
+    <div className="w-full max-w-lg mx-auto rounded-2xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-white/[0.03]">
       <div className="px-5 pt-5 pb-5 bg-white shadow-default rounded-2xl dark:bg-gray-900">
         <div className="flex items-start justify-between gap-3">
           <div>
