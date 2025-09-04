@@ -3,6 +3,7 @@ import { PatientSummary } from "@/components/patient/PatientSummary";
 import React from "react";
 import IceModelCard from "@/components/patient/IceModelCard";
 import PresentingSymptoms from "@/components/patient/PresentingSymptoms";
+import SummaryCard from "@/components/patient/SummaryCard";
 
 export const metadata: Metadata = {
   title: "Align | Dashboard",
@@ -11,18 +12,19 @@ export const metadata: Metadata = {
 
 export default function Dashboard() {
   return (
-    <div className="grid grid-cols-12 gap-4 md:gap-6">
-      <div className="col-span-12 space-y-6 lg:col-span-6">
-        <PatientSummary />
-      </div>
+    <div className="space-y-6">
+      <PatientSummary />
 
-      <div className="col-span-12 lg:col-span-6 flex">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+        <SummaryCard />
         <IceModelCard />
       </div>
 
-      <div className="col-span-12">
-        <PresentingSymptoms />
-      </div>
+      <h2 className="text-lg font-semibold text-gray-800 dark:text-white/90">
+        Presentation History
+      </h2>
+
+      <PresentingSymptoms />
     </div>
   );
 }
