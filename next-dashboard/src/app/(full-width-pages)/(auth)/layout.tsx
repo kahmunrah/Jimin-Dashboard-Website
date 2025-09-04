@@ -25,12 +25,20 @@ export default function AuthLayout({
                   <Image
                     width={231}
                     height={48}
-                    src="./images/logo/auth-logo.svg"
-                    alt="Logo"
+                    src="/images/logo/Align-Logo-with-words.svg"
+                    alt="Align logo"
+                    className="dark:hidden"
+                  />
+                  <Image
+                    width={231}
+                    height={48}
+                    src="/images/logo/Align-logo-with-words-dark-mode.svg"
+                    alt="Align logo"
+                    className="hidden dark:block"
                   />
                 </Link>
                 <p className="text-center text-gray-400 dark:text-white/60">
-                  Free and Open-Source Tailwind CSS Admin Dashboard Template
+                  Align Medical Dashboard
                 </p>
               </div>
             </div>
