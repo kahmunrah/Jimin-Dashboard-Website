@@ -65,38 +65,6 @@ export const PatientSummary: React.FC = () => {
                   </DropdownItem>
                 </Dropdown>
               </div>
-              <div className="flex flex-wrap gap-2 justify-end text-right">
-                  {[
-                    {
-                      label: patient.nhi_number,
-                      variant: "light" as const,
-                      color: "success" as const,
-                    },
-                    {
-                      label: `Clinical need: ${patient.clinical_need}`,
-                      variant: "solid" as const,
-                      color: "warning" as const,
-                    },
-                    ...patient.tags.map((tag) => ({
-                      label: tag,
-                      variant: "solid" as const,
-                      color: "info" as const,
-                    })),
-                    {
-                      label: `ESL: ${patient.preferred_language} preferred`,
-                      variant: "solid" as const,
-                      color: "info" as const,
-                    },
-                  ].map((badge) => (
-                  <Badge
-                    key={badge.label}
-                    variant={badge.variant}
-                    color={badge.color}
-                  >
-                    {badge.label}
-                  </Badge>
-                ))}
-              </div>
             </div>
           </div>
           {patient.translated_from && (
@@ -110,11 +78,38 @@ export const PatientSummary: React.FC = () => {
           )}
         </div>
         <div className="mt-3">
-          {/* Attached grey footer (duplicated style) */}
-          <div className="flex items-center justify-center gap-5 px-6 py-3 sm:gap-8 sm:py-4">
-            <dt className="rounded-lg bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80 text-sm line-clamp-3">
-              {patient.chief_complaint}
-            </dt>
+          {/* Attached grey footer now shows patient tags */}
+          <div className="flex flex-wrap justify-center gap-2 px-6 py-3 sm:gap-3 sm:py-4">
+            {[
+              {
+                label: patient.nhi_number,
+                variant: "light" as const,
+                color: "success" as const,
+              },
+              {
+                label: `Clinical need: ${patient.clinical_need}`,
+                variant: "solid" as const,
+                color: "warning" as const,
+              },
+              ...patient.tags.map((tag) => ({
+                label: tag,
+                variant: "solid" as const,
+                color: "info" as const,
+              })),
+              {
+                label: `ESL: ${patient.preferred_language} preferred`,
+                variant: "solid" as const,
+                color: "info" as const,
+              },
+            ].map((badge) => (
+              <Badge
+                key={badge.label}
+                variant={badge.variant}
+                color={badge.color}
+              >
+                {badge.label}
+              </Badge>
+            ))}
           </div>
         </div>
       </div>
