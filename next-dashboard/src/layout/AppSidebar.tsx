@@ -281,12 +281,22 @@ const AppSidebar: React.FC = () => {
               />
             </>
           ) : (
-            <Image
-              src="/images/logo/Align-logo-wordless-Default.svg"
-              alt="Logo"
-              width={32}
-              height={32}
-            />
+            <>
+              <Image
+                className="dark:hidden"
+                src="/images/logo/Align-logo-wordless-Default.svg"
+                alt="Logo"
+                width={32}
+                height={32}
+              />
+              <Image
+                className="hidden dark:block"
+                src="/images/logo/Align-logo-wordless-dark-mode.svg"
+                alt="Logo"
+                width={32}
+                height={32}
+              />
+            </>
           )}
         </Link>
       </div>

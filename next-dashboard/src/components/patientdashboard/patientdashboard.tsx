@@ -14,7 +14,7 @@ const metrics: Metric[] = [
   { id: 2, label: "Orders", value: "1,469", icon: TaskIcon },
 ];
 
-const EcommerceMetrics: React.FC = () => {
+const PatientDashboard: React.FC = () => {
   return (
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
@@ -36,4 +36,4 @@ const EcommerceMetrics: React.FC = () => {
   );
 };
 
-export default EcommerceMetrics;
+export default PatientDashboard;
