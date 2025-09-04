@@ -1,3 +1,5 @@
+"use client";
+
 import type { Metadata } from "next";
 import PatientCard, { Tag } from "@/components/waiting-room/PatientCard";
 import React from "react";
