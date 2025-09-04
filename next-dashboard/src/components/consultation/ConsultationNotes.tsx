@@ -110,7 +110,7 @@ const ConsultationNotes: React.FC = () => {
             <button
               onClick={() => setOpen(false)}
               aria-label="Close consultation notes"
-              className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-red-600 text-white"
+              className="absolute top-4 right-4 rounded bg-red-600 px-3 py-2 text-sm text-white"
             >
               <CloseIcon className="h-4 w-4" />
             </button>
@@ -179,22 +179,22 @@ const ConsultationNotes: React.FC = () => {
                   Patient Summary
                 </label>
                 <textarea
-                  className="w-full rounded border border-gray-200 bg-white p-3 pr-10 text-sm text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
+                  className="w-full rounded border border-gray-200 bg-white p-3 pr-10 text-sm text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 min-h-[120px]"
                   value={patientSummary}
                   onChange={(e) => setPatientSummary(e.target.value)}
                 />
-                <div className="absolute top-8 right-2 flex gap-2">
+                <div className="absolute top-3 right-2 flex gap-1">
                   <button
                     onClick={() => copyText(patientSummary)}
-                    className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                    className="p-1 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                   >
-                    <CopyIcon className="h-4 w-4" />
+                    <CopyIcon className="h-3 w-3" />
                   </button>
                   <button
                     onClick={() => pasteText(setPatientSummary)}
-                    className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                    className="p-1 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                   >
-                    <DocsIcon className="h-4 w-4" />
+                    <DocsIcon className="h-3 w-3" />
                   </button>
                 </div>
               </div>
@@ -204,22 +204,22 @@ const ConsultationNotes: React.FC = () => {
                   ICE Summary
                 </label>
                 <textarea
-                  className="w-full rounded border border-gray-200 bg-white p-3 pr-10 text-sm text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
+                  className="w-full rounded border border-gray-200 bg-white p-3 pr-10 text-sm text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 min-h-[120px]"
                   value={iceSummary}
                   onChange={(e) => setIceSummary(e.target.value)}
                 />
-                <div className="absolute top-8 right-2 flex gap-2">
+                <div className="absolute top-3 right-2 flex gap-1">
                   <button
                     onClick={() => copyText(iceSummary)}
-                    className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                    className="p-1 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                   >
-                    <CopyIcon className="h-4 w-4" />
+                    <CopyIcon className="h-3 w-3" />
                   </button>
                   <button
                     onClick={() => pasteText(setIceSummary)}
-                    className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                    className="p-1 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                   >
-                    <DocsIcon className="h-4 w-4" />
+                    <DocsIcon className="h-3 w-3" />
                   </button>
                 </div>
               </div>
@@ -230,22 +230,22 @@ const ConsultationNotes: React.FC = () => {
                     {p.label}
                   </label>
                   <textarea
-                    className="w-full rounded border border-gray-200 bg-white p-3 pr-10 text-sm text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
+                    className="w-full rounded border border-gray-200 bg-white p-3 pr-10 text-sm text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 min-h-[120px]"
                     value={p.text}
                     onChange={(e) => updatePresentation(i, e.target.value)}
                   />
-                  <div className="absolute top-8 right-2 flex gap-2">
+                  <div className="absolute top-3 right-2 flex gap-1">
                     <button
                       onClick={() => copyText(p.text)}
-                      className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                      className="p-1 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                     >
-                      <CopyIcon className="h-4 w-4" />
+                      <CopyIcon className="h-3 w-3" />
                     </button>
                     <button
                       onClick={() => pasteText((t) => updatePresentation(i, t))}
-                      className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                      className="p-1 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                     >
-                      <DocsIcon className="h-4 w-4" />
+                      <DocsIcon className="h-3 w-3" />
                     </button>
                   </div>
                 </div>

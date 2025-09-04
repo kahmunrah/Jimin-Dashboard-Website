@@ -164,12 +164,12 @@ const AppHeader: React.FC = () => {
             {/* <!-- Dark Mode Toggler --> */}
             <ThemeToggleButton />
             {/* <!-- Dark Mode Toggler --> */}
-
-           <NotificationDropdown /> 
+            <span className="text-sm text-gray-500 dark:text-gray-400">Autosaved</span>
+            <NotificationDropdown />
             {/* <!-- Notification Menu Area --> */}
           </div>
           {/* <!-- User Area --> */}
-          <UserDropdown /> 
+          <UserDropdown />
     
         </div>
       </div>
