@@ -18,23 +18,6 @@ const getAge = (dob: string) => {
 export const PatientSummary: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const age = getAge(patient.date_of_birth);
-  const notesFromPresentations = patient.presenting_symptoms
-    .map((sym) => `${sym.label}\n${sym.notes}`)
-    .join("\n\n");
-  const tagsText = [
-    `NHI: ${patient.nhi_number}`,
-    `Clinical need: ${patient.clinical_need}`,
-    ...patient.tags,
-    "English as second language",
-  ].join(", ");
-  const initialNotes =
-    `${patient.first_name} ${patient.last_name} ${age} ${patient.gender}\n` +
-    `Tags: ${tagsText}\n\n` +
-    `${patient.chief_complaint}\n\n` +
-    `Idea: ${patient.ice.idea}\n` +
-    `Concerns: ${patient.ice.concern}\n` +
-    `Expectation: ${patient.ice.expectation}\n\n` +
-    `${notesFromPresentations}`;
 
   function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);
@@ -137,7 +120,7 @@ export const PatientSummary: React.FC = () => {
       </div>
       {/* Metric Item End */}
 
-      <ConsultationNotes initialContent={initialNotes} />
+      <ConsultationNotes />
     </div>
   );
 };
