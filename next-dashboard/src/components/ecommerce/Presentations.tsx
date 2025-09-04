@@ -3,6 +3,12 @@ import Badge from "../ui/badge/Badge";
 import { AlertIcon } from "@/icons";
 import { patient } from "@/data/patient";
 
+interface SymptomDetail {
+  term: string;
+  detail: string;
+  subDetail?: string;
+}
+
 const Presentations: React.FC = () => {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
@@ -23,7 +29,7 @@ const Presentations: React.FC = () => {
             </Badge>
           </div>
           <dl className="mt-6 grid grid-cols-1 gap-y-2 sm:grid-cols-2 sm:gap-4">
-            {symptom.details.map((detail) => (
+            {symptom.details.map((detail: SymptomDetail) => (
               <div key={detail.term}>
                 <dt className="text-gray-500 dark:text-gray-400">
                   {detail.term}
