@@ -1,3 +1,5 @@
+"use client";
+
 import type { Metadata } from "next";
 import PatientCard, { Tag } from "@/components/waiting-room/PatientCard";
 import React from "react";
@@ -24,27 +26,27 @@ const schedule: ScheduleItem[] = [
   {
     time: "9:00 AM",
     patient: {
-      name: "Minseo Park",
-      age: 28,
-      gender: "F",
-      submittedAt: "8:45 AM",
-      tags: ["English as second language"],
-      conditions: ["Sore Throat", "Fatigue"],
+      name: "Lucas Wang",
+      age: 31,
+      gender: "M",
+      submittedAt: "8:20 AM",
+      tags: ["Follow-up"],
+      conditions: ["Knee Pain"],
     },
   },
   {
     time: "9:15 AM",
     patient: {
-      name: "Mateo Garcia",
-      age: 45,
-      gender: "M",
-      submittedAt: "8:50 AM",
-      tags: ["Certificate"],
-      conditions: ["Back Pain"],
+      name: "Emma Thompson",
+      age: 42,
+      gender: "F",
+      submittedAt: "8:35 AM",
+      tags: ["New Patient"],
+      conditions: ["Allergic Reaction"],
     },
   },
   {
-    time: "9:30 AM",
+    time: "9:45 AM",
     patient: {
       name: "Aisha Patel",
       age: 30,
@@ -80,10 +82,13 @@ const schedule: ScheduleItem[] = [
 ];
 
 export default function WaitingRoom() {
+  const [showEarlier, setShowEarlier] = React.useState(false);
+  const visibleSchedule = showEarlier ? schedule : schedule.slice(2);
+
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 max-w-xl mx-auto">
       <section>
-        <h2 className="text-xl font-semibold text-gray-800 dark:text-white/90 mb-4">
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-white/90 mb-4 text-center">
           Next Patient
         </h2>
         <PatientCard
@@ -104,16 +109,21 @@ export default function WaitingRoom() {
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold text-gray-800 dark:text-white/90 mb-4">
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-white/90 mb-4 text-center">
           Your Schedule
         </h2>
-        <button className="mb-4 text-sm underline text-gray-500">
-          view earlier consults
-        </button>
+        {!showEarlier && (
+          <button
+            className="mb-4 text-sm underline text-gray-500"
+            onClick={() => setShowEarlier(true)}
+          >
+            view earlier consults
+          </button>
+        )}
         <div className="relative">
-          <div className="absolute left-24 top-0 bottom-0 border-l border-gray-200 dark:border-gray-700"></div>
+          <div className="absolute left-28 top-0 bottom-0 border-l border-gray-200 dark:border-gray-700"></div>
           <ol className="space-y-8">
-            {schedule.map((item) => (
+            {visibleSchedule.map((item) => (
               <li
                 key={item.time}
                 className="relative flex items-start"
@@ -127,7 +137,7 @@ export default function WaitingRoom() {
                 <div className="ml-8 flex-1">
                   <PatientCard {...item.patient} />
                 </div>
-                <span className="absolute left-[5.75rem] top-4 w-3 h-3 bg-brand-500 rounded-full"></span>
+                <span className="absolute left-[6.75rem] top-4 w-3 h-3 bg-brand-500 rounded-full"></span>
               </li>
             ))}
           </ol>
